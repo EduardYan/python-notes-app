@@ -1,0 +1,79 @@
+html, body {
+  padding: 0;
+  margin:0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  background-color: rgb(5, 75, 141);
+  display: flex;
+}
+
+header {
+  margin:0;
+  padding:0;
+}
+
+header nav {
+  width: 100%;
+  background-color: #0F2E44;
+  margin: 0;
+  padding: 0;
+}
+
+header nav h1 {
+  color: white;
+  margin: 50px;
+  padding: 50px;
+}
+
+
+#notes-view {
+  display: block;
+}
+
+.note {
+  float: right;
+  margin: 30px;
+  border: 2px black solid;
+  padding: 20px;
+}
+
+.title-note {
+  padding: 5px;
+  text-align: left;
+  font-size: 2rem;
+}
+
+.text-note {
+  color: #aaa;
+  font-size: 1.5rem;
+}
+
+.delete-link {
+  width: 100%;
+  text-decoration: none;
+  border: 1px black solid;
+  background-color: #6CA7D3;
+  padding: 5px;
+  color: black;
+}
+
+
+#no-notes {
+  color: green;
+}
+
+#form {
+  display: block;
+}
+
+#text {
+  margin: 20px;
+  display: block;
+}
+
+#save-button {
+  padding: 5px;
+  background-color: green;
+}
