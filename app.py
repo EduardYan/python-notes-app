@@ -23,6 +23,7 @@ def home():
   notes_list = db.select(SELECT_QUERY)
   db.close()
 
+  # to index.html pass the notes lis of the database for show it
   return render_template('index.html', notes_list = notes_list)
 
 @app.route('/about')
@@ -51,7 +52,7 @@ def add_note():
   db.insert(INSERT_QUERY.format(content = note.content))
   db.close()
 
-  flash(f'Note Added Successfully.')
+  flash('Note Added Successfully.')
 
   # redirecting to home
   return redirect(url_for('home'))

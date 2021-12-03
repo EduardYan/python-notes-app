@@ -1,0 +1,32 @@
+/*
+  These styles are for the about page
+*/
+
+.target {
+  transition: box-shadow 0.3s ease;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  text-align: center;
+  border-radius: 20px;
+  background-color: rgba(200, 200, 200, 0.1);
+  margin: 5%;
+  padding: 2%;
+}
+
+.target:hover {
+  background-color: rgba(200, 200, 200, 0.5);
+  box-shadow: 0.3em 0.3em #bbb;
+}
+
+
+#about-title {
+  font-size: 3em;
+  color: #fff;
+  margin: 0;
+}
+
+#about-parr {
+  margin: 0;
+  font-size: 1.5em;
+  padding: 2.5%;
+}
