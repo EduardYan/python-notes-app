@@ -1,10 +1,10 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-<div class="conteiner">
-  <form action="/add-note", method="POST" id="form">
+<div class="container">
+  <form action="/add-note", method="POST">
 
-    <textarea id="text" name="content" cols="30" rows="10"></textarea>
+    <textarea id="text" name="content" cols="40" rows="10"></textarea>
 
     <button type="submit" id="save-button">Save</button>
 
@@ -22,7 +22,7 @@
     {% endfor %}
 
     {% else %}
-    <h1 id="no-notes">No there Notes yet.</h1>
+    <p id="no-notes">No there Notes yet.</p>
     {% endif %}
   </div>
 </div>

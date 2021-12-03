@@ -25,6 +25,15 @@ def home():
 
   return render_template('index.html', notes_list = notes_list)
 
+@app.route('/about')
+def about():
+  """
+  This route is for show
+  the about page.
+  """
+
+  return render_template('about.html')
+
 @app.route('/add-note', methods=['POST'])
 def add_note():
   """

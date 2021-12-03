@@ -1,42 +1,89 @@
+html {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 html, body {
   padding: 0;
   margin:0;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 body {
   background-color: rgb(5, 75, 141);
-  display: flex;
 }
 
 header {
-  margin:0;
-  padding:0;
+  background-color: #364552;
+  color: white;
+  padding: 2rem 2rem;
 }
 
 header nav {
   width: 100%;
-  background-color: #0F2E44;
-  margin: 0;
-  padding: 0;
 }
 
-header nav h1 {
+
+header nav a {
+  font-size: 3rem;
+  text-decoration: none;
   color: white;
-  margin: 50px;
-  padding: 50px;
 }
 
+#title-navigation {
+  font-size: 3rem;
+}
 
-#notes-view {
-  display: block;
+#title-navigation:hover {
+  color: #aaa;
+}
+
+header nav ul {
+  list-style: none;
+  float: right;
+}
+
+header nav ul li a {
+  font-size: 2rem;
+  padding: 5px;
+}
+
+header nav ul li a:hover {
+  color: #aaa;
+}
+
+.container {
+  display: flex;
+}
+
+#text {
+  font-size: 15px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#save-button {
+  padding: 5px;
+  margin: 1.5rem;
+  border: 1px black solid;
+  border-radius: 3px;
+  width: 7rem;
+}
+
+#save-button:hover {
+  cursor: pointer;
+  background-color: #aaa;
 }
 
 .note {
   float: right;
   margin: 30px;
   border: 2px black solid;
+  border-radius: 15px;
   padding: 20px;
+  width: 200px;
+  background-color: #afafca;
+}
+
+.note:hover {
+  background-color: #afb4f0;
 }
 
 .title-note {
@@ -46,26 +93,32 @@ header nav h1 {
 }
 
 .text-note {
-  color: #aaa;
+  color: black;
   font-size: 1.5rem;
+  overflow: auto;
+  text-align: left;
+  padding: 5px;
 }
+
 
 .delete-link {
   width: 100%;
   text-decoration: none;
-  border: 1px black solid;
+  border: 1px black ,fsolid;
   background-color: #6CA7D3;
   padding: 5px;
   color: black;
 }
 
-
-#no-notes {
-  color: green;
+.delete-link:hover {
+  background-color: rgb(142, 203, 231);
 }
 
-#form {
-  display: block;
+#no-notes {
+  color: #efefef;
+  padding: 5px;
+  font-size: 2em;
+  margin-left: 500px;
 }
 
 #text {
@@ -73,7 +126,7 @@ header nav h1 {
   display: block;
 }
 
-#save-button {
-  padding: 5px;
-  background-color: green;
+#about-title {
+  color: #efefef;
+  padding: 20px;
 }

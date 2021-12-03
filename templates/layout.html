@@ -11,8 +11,18 @@
 <body>
 
   <header>
-    <nav class="navigation">
-      <h1 id="title-navigation">Notes App</h1>
+    <nav>
+      <a id="title-navigation" href="{{ url_for('home') }}">Notes App</a>
+      <ul>
+        <li>
+          <a class="navigation-links" href="{{ url_for('about') }}">About</a>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <a class="navigation-links" href="{{ url_for('home') }}">Home</a>
+        </li>
+      </ul>
     </nav>
   </header>
 
