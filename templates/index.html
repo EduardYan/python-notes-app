@@ -1,6 +1,15 @@
 {% extends 'layout.html' %}
 
 {% block content %}
+{% with message = get_flashed_messages()[0] %}
+
+{% if message %}
+<div class="messages-view">
+  <p>{{ message }}</p>
+</div>
+{% endif %}
+{% endwith %}
+
 <div class="container">
   <form action="/add-note", method="POST">
 

@@ -101,7 +101,7 @@ header nav ul li a:hover {
 
 .note:hover {
   background-color: #c9cefcaf;
-  box-shadow: 0.5rem 0.1rem #aaa;
+  box-shadow: 0.5rem 0.1rem rgba(0, 0, 0, 0.3);
 }
 
 .title-note {
@@ -134,8 +134,27 @@ header nav ul li a:hover {
 
 #no-notes {
   color: #efefef;
-  padding: 5px;
+  padding: 1.5em;
   font-size: 2em;
-  margin-left: 500px;
+  text-align: center;
 }
 
+
+.messages-view {
+  transition: box-shadow 0.3s ease;
+  padding: 0.1rem;
+  margin: 1%;
+  border-radius: 2rem;
+  text-align: center;
+  background-color: #c9cefcaf;
+}
+
+.messages-view:hover {
+  cursor: pointer;
+  box-shadow: 0.5rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+.messages-view p {
+  color: #000;
+  font-size: 1.5em;
+}

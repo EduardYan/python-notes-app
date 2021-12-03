@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
   <!-- CUSTOM STYLE -->
   <link rel="stylesheet" href="{{ url_for('static', filename = 'css/main.css') }}" />
 </head>
+
 <body>
 
   <header>
@@ -26,8 +28,12 @@
     </nav>
   </header>
 
-  {% block content %}
-  {% endblock %}
-  
+  <div class="notes-container">
+    {% block content %}
+    {% endblock %}
+
+  </div>
+  <script src="{{ url_for('static', filename = 'js/deleteMessage.js') }}"></script>
+
 </body>
 </html>
