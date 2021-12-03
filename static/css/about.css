@@ -15,7 +15,7 @@
 
 .target:hover {
   background-color: rgba(200, 200, 200, 0.5);
-  box-shadow: 0.3em 0.3em #bbb;
+  box-shadow: 0.6em 0.5em rgba(0, 0, 0, 0.3);
 }
 
 

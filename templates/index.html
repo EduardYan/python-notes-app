@@ -1,6 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block content %}
+<!-- GETTING AND SHOW THE MESSAGES -->
 {% with message = get_flashed_messages()[0] %}
 
 {% if message %}
@@ -23,11 +24,14 @@
     <!-- Validating if there notes -->
     {% if notes_list %}
     {% for note in notes_list %}
-      <div class="note">
-        <span class="title-note">Note {{ note[0] }}</span>
-        <p class="text-note">{{ note[1] }}</p>
-        <a href="/delete-note/{{ note[0] }}" class="delete-link">Delete</a>
-      </div>
+    <div class="note">
+      <span class="title-note">Note {{ note[0] }}</span>
+      <p class="date-note">Day: {{ note[1] }}</p>
+      <p class="date-note">Month: {{ note[2] }}</p>
+      <p class="date-note">Year: {{ note[3] }}</p>
+      <p class="text-note">{{ note[4] }}</p>
+      <a href="/delete-note/{{ note[0] }}" class="delete-link">Delete</a>
+    </div>
     {% endfor %}
 
     {% else %}

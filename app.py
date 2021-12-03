@@ -7,6 +7,7 @@ from flask import Flask, render_template, redirect, request, url_for, flash
 from models.note import Note
 from models.database import DataBase, DB_PATH
 from queries.queries import INSERT_QUERY, DELETE_QUERY, SELECT_QUERY
+from helpers.utils import get_date
 
 app = Flask(__name__)
 # settings for the sessions
@@ -45,11 +46,12 @@ def add_note():
 
   # getting the content of the note of the form and creating a note object
   content_note = request.form['content']
-  note = Note(content_note)
+  date = get_date()
+  note = Note(date, content_note)
 
   # creating the connection and save the note in the database
   db = DataBase(DB_PATH)
-  db.insert(INSERT_QUERY.format(content = note.content))
+  db.insert(INSERT_QUERY.format(day = note.date['day'], month = note.date['month'], year = note.date['year'],  content = note.content))
   db.close()
 
   flash('Note Added Successfully.')
