@@ -1,17 +1,25 @@
 """
 This is the principal
 file for execute the web server.
+
+Execute with:
+$ python3 app.py
+
 """
 
 from flask import Flask, render_template, redirect, request, url_for, flash
 from models.note import Note
 from models.database import DataBase, DB_PATH
+from models.settings import Settings
 from queries.queries import INSERT_QUERY, DELETE_QUERY, SELECT_QUERY
 from helpers.utils import get_date
 
+# start the app
 app = Flask(__name__)
 # settings for the sessions
 app.config['SECRET_KEY'] = 'mysecretkey'
+
+settings = Settings('blue', False)
 
 @app.route('/')
 @app.route('/home')
@@ -25,7 +33,7 @@ def home():
   db.close()
 
   # to index.html pass the notes lis of the database for show it
-  return render_template('index.html', notes_list = notes_list)
+  return render_template('index.html', notes_list = notes_list, show_date = settings.date, color = settings.color)
 
 @app.route('/about')
 def about():
@@ -35,6 +43,15 @@ def about():
   """
 
   return render_template('about.html')
+
+@app.route('/settings')
+def settings_page():
+  """
+  This route is for show the 
+  settings page.
+  """
+
+  return render_template('settings.html', color = settings.color, show_date = settings.date)
 
 @app.route('/add-note', methods=['POST'])
 def add_note():
@@ -58,6 +75,35 @@ def add_note():
 
   # redirecting to home
   return redirect(url_for('home'))
+
+@app.route('/save-settings', methods=['POST'])
+def save_settings():
+  """
+  This route is for save the settings
+  for show again the notes.
+  """
+
+  # getting the new settings and changing it
+  color = request.form['color']
+  # esta execption cuando no se quiere ver la fecha el server lanza una excepcion
+  # al momento de obtener request.form['date'] y si lanza la exepcion lo colocamos en False
+  try:
+    show_date = request.form['date']
+    # print(color, show_date) # for show the new settings
+
+    settings.color = str(color)
+    settings.date = True
+
+    flash('Settings Updated')  # showing a message
+
+    return redirect(url_for('home'))
+  except:
+    settings.color = str(color)
+    settings.date = False
+
+    flash('Settings Updated')
+
+    return redirect(url_for('home'))
 
 @app.route('/delete-note/<string:id>')
 def delete_note(id):

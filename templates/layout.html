@@ -13,22 +13,10 @@
 <body>
 
   <header>
-    <nav>
-      <a id="title-navigation" href="{{ url_for('home') }}">Notes App</a>
-      <ul>
-        <li>
-          <a class="navigation-links" href="{{ url_for('about') }}">About</a>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <a class="navigation-links" href="{{ url_for('home') }}">Home</a>
-        </li>
-      </ul>
-    </nav>
+    {% include 'partials/_nav.html' %}
   </header>
 
-  <div class="notes-container">
+  <div class="principal-container">
     {% block content %}
     {% endblock %}
 
@@ -36,4 +24,7 @@
   <script src="{{ url_for('static', filename = 'js/deleteMessage.js') }}"></script>
 
 </body>
+<footer>
+  <a href="#title-navigation">Go to beginning.</a>
+</footer>
 </html>

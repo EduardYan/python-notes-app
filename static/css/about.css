@@ -14,10 +14,10 @@
 }
 
 .target:hover {
+  cursor: pointer;
   background-color: rgba(200, 200, 200, 0.5);
   box-shadow: 0.6em 0.5em rgba(0, 0, 0, 0.3);
 }
-
 
 #about-title {
   font-size: 3em;
@@ -29,4 +29,11 @@
   margin: 0;
   font-size: 1.5em;
   padding: 2.5%;
+}
+
+#contact-link {
+  text-decoration: none;
+  font-size: 1.5em;
+  padding: 1.5rem;
+  color: #000;
 }

@@ -47,9 +47,13 @@ header nav ul {
   float: right;
 }
 
+header nav ul li {
+  display: inline;
+}
+
 header nav ul li a {
   font-size: 2rem;
-  padding: 5px;
+  padding: 0.5rem;
 }
 
 header nav ul li a:hover {
@@ -80,71 +84,13 @@ header nav ul li a:hover {
   width: 10rem;
   font-size: 1.5rem;
   color: white;
+  background-color: #3b517e;
 }
 
 .container form button:hover {
   cursor: pointer;
-  background-color: #aaa;
+  background-color: #5675b4;
   box-shadow: 0.5rem 0.5rem rgba(0, 0, 0, 0.3);
-}
-
-#notes-view {
-  padding: 0;
-  margin: 0.5em;
-  display: grid;
-  grid-template-columns: 50% 50%;
-}
-
-.note {
-  transition: all 0.3s ease;
-  border-radius: 15px;
-  margin: 0.5em;
-  padding: 1.5em;
-  background-color: #3b517e;
-}
-
-.note:hover {
-  background-color: #8b96f8af;
-  box-shadow: 1rem 1rem rgba(0, 0, 0, 0.3);
-  cursor: pointer;
-}
-
-.title-note {
-  padding: 5px;
-  text-align: left;
-  font-size: 2rem;
-}
-
-.date-note {
-  font-size: 1rem;
-  color: #eee;
-}
-
-.text-note {
-  color: black;
-  font-size: 1.5rem;
-  overflow: auto;
-  text-align: left;
-  padding: 5px;
-}
-
-.delete-link {
-  text-decoration: none;
-  background-color: #f79a9a;
-  padding: 1rem;
-  color: black;
-  border-radius: 0.5rem;
-}
-
-.delete-link:hover {
-  background-color: #f17171;
-}
-
-#no-notes {
-  color: #efefef;
-  padding: 1.5em;
-  font-size: 2em;
-  text-align: center;
 }
 
 .messages-view {

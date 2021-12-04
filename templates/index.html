@@ -1,9 +1,83 @@
 {% extends 'layout.html' %}
 
 {% block content %}
+
+<!-- STYLE TO SHOW -->
+<link rel="stylesheet" href="{{ url_for('static', filename = 'css/note.css') }}">
+
+<!--- VALIDATING THE STYLE FOR THE NOTE-->
+{% if color == 'green' %}
+<style>
+  .note {
+    transition: all 0.3s ease;
+    border-radius: 15px;
+    margin: 0.5em;
+    padding: 1.5em;
+    background-color: #44c24a;
+  }
+
+</style>
+
+{% elif color == 'blue' %}
+<style>
+  .note {
+    transition: all 0.3s ease;
+    border-radius: 15px;
+    margin: 0.5em;
+    padding: 1.5em;
+    background-color: #3b517e;
+  }
+</style>
+
+{% elif color == 'red' %}
+<style>
+  .note {
+    transition: all 0.3s ease;
+    border-radius: 15px;
+    margin: 0.5em;
+    padding: 1.5em;
+    background-color: #e25454;
+  }
+</style>
+
+{% elif color == 'yellow' %}
+<style>
+  .note {
+    transition: all 0.3s ease;
+    border-radius: 15px;
+    margin: 0.5em;
+    padding: 1.5em;
+    background-color: #e2d952;
+  }
+</style>
+
+{% elif color == 'orange' %}
+<style>
+  .note {
+    transition: all 0.3s ease;
+    border-radius: 15px;
+    margin: 0.5em;
+    padding: 1.5em;
+    background-color: #e28c52;
+  }
+</style>
+
+{% elif color == 'violet' %}
+<style>
+  .note {
+    transition: all 0.3s ease;
+    border-radius: 15px;
+    margin: 0.5em;
+    padding: 1.5em;
+    background-color: #a852e2;
+  }
+</style>
+
+
+{% endif %}
+
 <!-- GETTING AND SHOW THE MESSAGES -->
 {% with message = get_flashed_messages()[0] %}
-
 {% if message %}
 <div class="messages-view">
   <p>{{ message }}</p>
@@ -14,11 +88,12 @@
 <div class="container">
   <form action="/add-note", method="POST">
 
-    <textarea name="content" cols="50" rows="15"></textarea>
+    <textarea name="content" cols="50" rows="15" autofocus placeholder="Note"></textarea>
 
     <button type="submit">Save</button>
 
   </form>
+
   <!-- NOTES VIEW -->
   <div id="notes-view">
     <!-- Validating if there notes -->
@@ -26,11 +101,15 @@
     {% for note in notes_list %}
     <div class="note">
       <span class="title-note">Note {{ note[0] }}</span>
+      {% if show_date %}
       <p class="date-note">Day: {{ note[1] }}</p>
       <p class="date-note">Month: {{ note[2] }}</p>
       <p class="date-note">Year: {{ note[3] }}</p>
+      {% endif %}
+
       <p class="text-note">{{ note[4] }}</p>
       <a href="/delete-note/{{ note[0] }}" class="delete-link">Delete</a>
+
     </div>
     {% endfor %}
 
@@ -39,6 +118,5 @@
     {% endif %}
   </div>
 </div>
-
 
 {% endblock %}

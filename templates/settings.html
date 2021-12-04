@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<!-- STYLE FOR THIS PAGE -->
+<link rel="stylesheet" href="{{ url_for('static', filename = 'css/settings.css') }}">
+
+<span id="title-settings">Settings</span>
+
+<p id="info-parr">Change the settings for the notes</p>
+
+<form action="/save-settings" method="POST" class="settings-container">
+  <label for="color" class="text-options">Colors for the note</label>
+  <select name="color" class="options" >
+    <option value="green" id="green">Green</option>
+    <option value="yellow" id="yellow">Yellow</option>
+    <option value="blue" id="blue">Blue</option>
+    <option value="red" id="red">Red</option>
+    <option value="violet" id="violet">Violet</option>
+    <option value="orange" id="orange">Orange</option>
+  </select>
+
+  <label for="show-date" class="text-options">Show Date</label>
+  <input type="checkbox" name="date" id="show-date" class="options">
+
+  <button type="submit" id="save-button">Save changes</button>
+</form>
+
+{% endblock %}

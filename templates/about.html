@@ -1,9 +1,12 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-<link rel="stylesheet" href="/static/css/about.css">
+<link rel="stylesheet" href="{{ url_for('static', filename = 'css/about.css') }}">
 <div class="target">
   <span id="about-title">About</span>
   <p id="about-parr">This is a small web application for<br>save notes easily and quickly.</p>
+  <a href="mailto:eduarygp@gmail.com" id="contact-link">Contact me here.</a>
 </div>
+
+
 {% endblock %}
