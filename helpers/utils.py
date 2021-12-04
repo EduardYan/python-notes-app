@@ -26,4 +26,5 @@ def get_date():
 
 if __name__ == '__main__':
   date = get_date()
+  print('Testing the get_date() function')
   print(date)
