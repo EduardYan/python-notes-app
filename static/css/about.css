@@ -31,9 +31,7 @@
   padding: 2.5%;
 }
 
-#contact-link {
-  text-decoration: none;
-  font-size: 1.5em;
-  padding: 1.5rem;
-  color: #000;
+footer /* This styls is for reset the style of main.css */{
+  padding: 3rem; 
+  margin-top: 12rem;
 }

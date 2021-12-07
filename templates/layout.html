@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Notes App</title>
   <!-- CUSTOM STYLE -->
-  <link rel="stylesheet" href="{{ url_for('static', filename = 'css/main.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename = 'css/main.css') }}">
 </head>
 
 <body>
@@ -17,6 +17,7 @@
   </header>
 
   <div class="principal-container">
+    <!-- THE DIFERENT CONTENT FOR SHOW -->
     {% block content %}
     {% endblock %}
 
@@ -26,7 +27,7 @@
 </body>
 <footer>
   <span id="year">2021</span>
-  <a href="#title-navigation">Go to beginning</a>
-  <a href="mailto:eduarygp@gmail.com">Contact me</a>
+  <!-- THIS LINK IS FOR THE INITIAL TITLE IN HOME PAGE -->
+  <a href="{{ url_for('home') }}#title-navigation">Go to beginning</a>
 </footer>
 </html>

@@ -24,6 +24,3 @@ $ python3 -m app
 
 ## Screenshot.
 ![](./doc/screenshot.png)
-
-## Bugs or Problems.
-**My email: _eduarygp@gmail.com_**

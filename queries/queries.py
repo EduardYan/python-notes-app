@@ -1,6 +1,6 @@
 """
 This module have the queries
-for the database.
+for use in the database.
 """
 
 # queries for the database
