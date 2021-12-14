@@ -6,7 +6,7 @@ __This is a small web application maked with flask-python for add notes easily a
 __You can create a virtual enviroment and install the dependencies with the requirements file, executing:__
 
 ```bash
-$ python3 install -r requirements.txt
+$ pip3 install -r requirements.txt
 ```
 
 ## Run.
