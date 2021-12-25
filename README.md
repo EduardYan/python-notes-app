@@ -13,13 +13,13 @@ $ pip3 install -r requirements.txt
 __For run the app we placed in the project folder and execute:__
 
 ```bash
-$ python3 app.py
+$ python3 index.py
 ```
 
 __Or:__
 
 ```bash
-$ python3 -m app
+$ python3 -m index
 ```
 
 ## Screenshot.
